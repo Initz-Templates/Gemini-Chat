@@ -3,13 +3,14 @@
     src: url('/googlesans.woff2');
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     transition: all ease 0.5s;
     font-family: "Google Sans", sans-serif;
 }
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -30,9 +31,9 @@ body {
 
 .chatCard {
     position: relative;
-    height: 500px;
+    height: 600px;
     padding-right: 5px;
-    width: 400px;
+    width: 800px;
     overflow-y: scroll;
     backdrop-filter: blur(25px) saturate(200%);
     -webkit-backdrop-filter: blur(25px) saturate(200%);
@@ -59,6 +60,19 @@ body {
     width: 50%;
     display: flex;
     align-items: center;
+}
+
+.left .img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.left .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .left .name {
@@ -98,25 +112,20 @@ body {
 .message {
     display: flex;
     align-items: center;
-    margin-left: 10px;
-    margin-top: 10px;
+    margin: 10px;
 }
 
-.user {
-    height: 32px;
+.message .img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
-.input_area {
-    position: sticky;
-    bottom: 0;
-    height: 50px;
+.message .img img {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #00000024;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
+    height: 100%;
+    object-fit: cover;
 }
 
 .message .text {
@@ -126,6 +135,21 @@ body {
     border-radius: 15px;
     backdrop-filter: blur(25px) saturate(200%);
     -webkit-backdrop-filter: blur(25px) saturate(200%);
+}
+
+.ai-message .text {
+    background-color: #f1f1f1; /* Example background color for AI message */
+}
+
+.user-message {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.user-message .text {
+    background-color: #e1ffc7; /* Example background color for user message */
+    margin-right: 10px;
+    margin-left: 0;
 }
 
 .input-area {
@@ -167,7 +191,7 @@ body {
     outline: none;
     color: rgb(133, 130, 130);
     cursor: pointer;
-    background-color:rgba(133, 130, 130, 0.41);
+    background-color: rgba(133, 130, 130, 0.41);
 }
 
 .input-area .send:hover {
@@ -180,6 +204,7 @@ body {
     height: 90%;
     display: flex;
 }
+
 .loading {
     position: absolute;
     visibility: hidden;
@@ -189,8 +214,8 @@ body {
     width: 100%;
     height: 100%;
     left: 0;
-    display: flex; /* Add this line to make the dots visible */
-    align-items: center; /* Add this line to vertically center the dots */
+    display: flex;
+    align-items: center;
 }
 
 .dot1, .dot2, .dot3 {
@@ -224,4 +249,3 @@ body {
 .dot3 {
     animation-delay: 0.66s;
 }
-

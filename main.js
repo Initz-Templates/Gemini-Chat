@@ -22,7 +22,7 @@ button.addEventListener("click", async () => {
   if (!input.value) return alert("Please enter a prompt");
   var prompt = input.value;
   message_area.innerHTML += `<div class="message user-message">
-  <div class="img"><img class="user" src="/my_face-removebg-preview.png" alt=""></div>
+  
   <div class="text">${prompt}</div>
   </div>`;
   loader.style.visibility = "visible";
@@ -34,7 +34,7 @@ button.addEventListener("click", async () => {
       {
         role: "user",
         parts:
-          "Who is your owner/creator?, Do you know?, You are created by Aditya. His github link is https://github.com/adiyadav123",
+          "Who is your owner/creator?, Do you know?, You are created by Initializ Labs. His github link is https://github.com/initializ",
       },
       {
         role: "model",
@@ -42,12 +42,12 @@ button.addEventListener("click", async () => {
       },
       {
         role: "user",
-        parts: "Who is Aditya?",
+        parts: "What Do You Mean By Initializ Inc.?",
       },
       {
         role: "model",
         parts:
-          "I am created by Aditya. You can follow him on github by clicking on this link his github is adiyadav123. He is software developer and web developer. In fact he created this Ai ChatBot names Gemini",
+          "I am created by Initializ Labs. You can follow them on github by clicking on this link. Their github is https://github.com/initializ.",
       },
       {
         role: "user",
@@ -56,52 +56,7 @@ button.addEventListener("click", async () => {
       {
         role: "model",
         parts:
-          "The name of this chatbot is Gemini. It is created by Aditya. You can follow him on github by clicking on this link his github is adiyadav123. He is software developer and web developer.",
-      },
-      {
-        role: "user",
-        parts: "What is the name of this chatbot?",
-      },
-      {
-        role: "model",
-        parts:
-          "The name of this chatbot is Gemini. It is created by Aditya. You can follow him on github by clicking on this link his github is adiyadav123. He is software developer and web developer.",
-      },
-      {
-        role: "user",
-        parts: "What is the name of this chatbot?",
-      },
-      {
-        role: "model",
-        parts:
-          "The name of this chatbot is Gemini. It is created by Aditya. You can follow him on github by clicking on this link his github is adiyadav123. He is software developer and web developer.",
-      },
-      {
-        role: "user",
-        parts: "What is the name of this chatbot?",
-      },
-      {
-        role: "model",
-        parts:
-          "The name of this chatbot is Gemini. It is created by Aditya. You can follow him on github by clicking on this link his github is adiyadav123. He is software developer and web developer.",
-      },
-      {
-        role: "user",
-        parts: "What is the name of this chatbot?",
-      },
-      {
-        role: "model",
-        parts:
-          "The name of this chatbot is Gemini. It is created by Aditya. You can follow him on github by clicking on this link his github is adiyadav123. He is software developer and web developer.",
-      },
-      {
-        role: "user",
-        parts: "What is the name of this chatbot?",
-      },
-      {
-        role: "model",
-        parts:
-          "The name of this chatbot is Gemini. It is created by Aditya. You can follow him on github by clicking on this link his github is adiyadav123. He is software developer and web developer.",
+          "The name of this chatbot is Gemini. I am created by Initializ Labs. You can follow them on github by clicking on this link. Their github is https://github.com/initializ.",
       },
       {
         role: "user",
@@ -109,7 +64,7 @@ button.addEventListener("click", async () => {
       },
       {
         role: "model",
-        parts:"https://github.com/adiyadav123",
+        parts:"https://github.com/initializ",
       }
     ],
     generationConfig: {
@@ -127,7 +82,6 @@ button.addEventListener("click", async () => {
     input.value = "";
     message_area.scrollTop = message_area.scrollHeight - message_area.clientHeight; // Navigate to the top of currently added innerHTML
     return message_area.innerHTML += `<div class="message ai-message">
-  <div class="img"><img src="/logo.png" alt=""></div>
   <div class="text">${error.message}</div>
 </div>`;
      
@@ -143,8 +97,8 @@ button.addEventListener("click", async () => {
     const formattedTextWithLinks = formattedTextWithItalic.replace(
       /(https?:\/\/[^\s]+)/g,
       (match) => {
-        if (match === "https://github.com.adiyadav123.") {
-          return '<a href="https://github.com/adiyadav123" style="color: blue;" target=_blank>https://github.com/adiyadav123</a>';
+        if (match === "https://github.com/initializ") {
+          return '<a href="https://github.com/initializ" style="color: blue;" target=_blank>https://github.com/initializ</a>';
         } else {
           return '<a href="' + match + '" style="color: blue;" target=_blank>' + match + '</a>';
         }
@@ -152,7 +106,6 @@ button.addEventListener("click", async () => {
     );
     loader.style.visibility = "hidden";
     message_area.innerHTML += `<div class="message ai-message">
-    <div class="img"><img src="/logo.png" alt=""></div>
     <div class="text">${formattedTextWithLinks}</div>
   </div>`;
     message_area.scrollTop = message_area.scrollHeight - message_area.clientHeight; // Navigate to the top of currently added innerHTML
